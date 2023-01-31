@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class InputComponent {
 	placeholder: string = "Ceci est un placeholder";
-	type: string = "text";
+	type: string = "password";
 }
