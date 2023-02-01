@@ -12,6 +12,9 @@ import { Demo3Component } from './demos/demo3/demo3.component';
 import { ToTemperaturePipe } from './demos/pipes/to-temperature.pipe';
 import { ChronoComponent } from './exos/exo2/chrono/chrono.component';
 import { TimePipe } from './exos/pipes/time.pipe';
+import { Demo4Component } from './demos/demo4/demo4.component';
+import { Demo5Component } from './demos/demo5/demo5.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,13 @@ import { TimePipe } from './exos/pipes/time.pipe';
     ToTemperaturePipe,
     ChronoComponent,
     TimePipe,
+    Demo4Component,
+    Demo5Component,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
