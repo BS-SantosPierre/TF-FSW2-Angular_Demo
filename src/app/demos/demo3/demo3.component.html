@@ -7,4 +7,10 @@
 <p>{{ birthdate }}</p>
 <p>Birth Date: {{ birthdate | date: 'dd/MM/yyyy' }}</p>
 
-<p>Price: {{ price | currency: 'USD' }}</p>
+<p>Price: {{ price | currency: 'EUR' }}</p>
+
+<h3>Custom Pipes</h3>
+
+<p>{{ 50 | toTemperature : 'f' }}</p>
+
+

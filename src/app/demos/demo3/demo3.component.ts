@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToTemperaturePipe } from '../pipes/to-temperature.pipe';
 
 @Component({
   selector: 'app-demo3',
