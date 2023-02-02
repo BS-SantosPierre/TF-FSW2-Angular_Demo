@@ -1,0 +1,24 @@
+.les-cours {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.titre-cours {
+    background-color: lightblue;
+    padding: .5%;
+    border: 1px solid darkslategray;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.description-cours {
+    padding: .5%;
+    border-left: 1px solid darkslategray;
+    border-right: 1px solid darkslategray;
+}
+
+.les-cours:last-child {
+    border-bottom: 1px solid darkslategray;
+}
+
