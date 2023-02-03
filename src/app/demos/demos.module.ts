@@ -9,6 +9,7 @@ import { Demo4Component } from './demo4/demo4.component';
 import { Demo5Component } from './demo5/demo5.component';
 import { ToTemperaturePipe } from './pipes/to-temperature.pipe';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     DemosRoutingModule,
-    FormsModule
-  ]
+    FormsModule,
+		SharedModule
+  ],
 })
 export class DemosModule { }

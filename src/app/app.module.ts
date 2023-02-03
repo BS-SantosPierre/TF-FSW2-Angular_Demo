@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DemosModule } from './demos/demos.module';
 import { ExosModule } from './exos/exos.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ExosModule } from './exos/exos.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+		SharedModule,
     DemosModule,
 		ExosModule
   ],

@@ -7,9 +7,9 @@ import { Exo3Component } from './exo3/exo3.component';
 import { ChronoComponent } from './exo2/chrono/chrono.component';
 import { Exo4Component } from './exo4/exo4.component';
 import { Exo5Component } from './exo5/exo5.component';
-import { TimePipe } from './pipes/time.pipe';
 import { InputComponent } from './exo1/input/input.component';
 import { UserInfoComponent } from './exo1/user-info/user-info.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,13 +19,13 @@ import { UserInfoComponent } from './exo1/user-info/user-info.component';
 		Exo3Component,
 		Exo4Component,
 		Exo5Component,
-		TimePipe,
 		InputComponent,
     UserInfoComponent,
 	],
   imports: [
     CommonModule,
-    ExosRoutingModule
+    ExosRoutingModule,
+		SharedModule
   ]
 })
 export class ExosModule { }

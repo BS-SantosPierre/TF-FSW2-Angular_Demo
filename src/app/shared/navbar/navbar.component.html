@@ -1,0 +1,23 @@
+<nav>
+	<ul>
+		<!-- Parcourir les liens parents -->
+		<li *ngFor="let link of links; index as i;">
+			<a
+				[routerLink]="link.url"
+				(click)="toggleVisible(i)">
+				{{ link.title }}
+			</a>
+			<!-- Menu Enfants -->
+			<!--
+					Vérifie si la propriété children existe,
+					si il y a des liens et
+					si le lien est visible
+			-->
+			<ul *ngIf="link.children && link.children.length !== 0 && link.isVisible">
+				<li *ngFor="let linkChildren of link.children">
+					<a [routerLink]="linkChildren.url">{{ linkChildren.title }}</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>
