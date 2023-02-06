@@ -1,0 +1,18 @@
+<h1>Book List</h1>
+
+<div>
+	<label for="book-input">Book Name:</label>
+	<input type="text" id="book-input" [(ngModel)]="bookName" />
+	<!-- <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p> -->
+	<div>
+		<button type="button" (click)="addBook()">Add Book</button>
+	</div>
+</div>
+
+<div *ngIf="books.length === 0">
+	<p>Add books to your list</p>
+</div>
+
+<ul>
+	<app-book-service *ngFor="let book of books" [book]="book" />
+</ul>
