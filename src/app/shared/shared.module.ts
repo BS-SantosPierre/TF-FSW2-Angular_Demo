@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TimePipe } from './pipes/time.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,11 +13,13 @@ import { RouterModule } from '@angular/router';
 	],
   imports: [
     CommonModule,
-		RouterModule
+		RouterModule,
+		FormsModule
   ],
 	exports: [
 		TimePipe,
-		NavbarComponent
+		NavbarComponent,
+		FormsModule
 	]
 })
 export class SharedModule { }

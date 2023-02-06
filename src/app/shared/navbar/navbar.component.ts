@@ -23,6 +23,7 @@ export class NavbarComponent {
 			{ title: 'Spoiler Alert', url: 'exo3' },
 			{ title: 'Menu', url: 'exo4' },
 			{ title: 'Accordeon', url: 'exo5' },
+			{ title: 'Book List', url: 'exo6' },
 		] }
 	]
 
