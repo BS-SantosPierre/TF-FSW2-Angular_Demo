@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Book } from '../models/Book';
+import { Book } from 'src/app/types/Book';
 
 @Component({
   selector: 'app-exo6',
@@ -13,9 +13,9 @@ export class Exo6Component {
 	currentId: number = 3;
 
 	books: Book[] = [
-		new Book(1, "One Piece"),
-		new Book(2, "Naruto"),
-		new Book(3, "Bleach"),
+		{ id: 1, name: "One Piece" },
+		{ id: 2, name: "Naruto" },
+		{ id: 3, name: "Bleach" }
 	];
 
 	addBook() {
@@ -26,7 +26,10 @@ export class Exo6Component {
 		if (this.bookName.trim()) {
 			this.currentId += 1;
 			// Création du livre avec le nouvelle id et son nom
-			const newBook = new Book(this.currentId, this.bookName.trim());
+			const newBook: Book = {
+				id: this.currentId,
+				name: this.bookName.trim()
+			};
 			// Ajout du livre dans le tableau
 			this.books.push(newBook);
 			// Reset Input
@@ -36,10 +39,10 @@ export class Exo6Component {
 		}
 	}
 
-	deleteBook(event: number) {
+	deleteBook(bookChildren: Book) {
 		// Chercher l'index du livre
 		const indexBook = this.books.findIndex((book) => {
-			return book.id === event;
+			return book.id === bookChildren.id;
 		});
 		// Vérification si le livre existe
 		if (indexBook === -1) {

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Book } from '../../models/Book';
+import { Book } from 'src/app/types/Book';
+
 
 @Component({
   selector: 'app-book',
@@ -9,13 +10,13 @@ import { Book } from '../../models/Book';
 export class BookComponent {
 	@Input() book!: Book;
 
-	@Output() deleteBook: EventEmitter<number>;
+	@Output() deleteBook: EventEmitter<Book>;
 
 	constructor() {
-		this.deleteBook = new EventEmitter<number>();
+		this.deleteBook = new EventEmitter<Book>();
 	}
 
-	sendId(){
-		this.deleteBook.emit(this.book.id);
+	sendBook(){
+		this.deleteBook.emit(this.book);
 	}
 }
