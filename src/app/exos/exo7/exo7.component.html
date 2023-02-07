@@ -1,0 +1,23 @@
+<h2>Shopping List</h2>
+
+<div style="border: 1px solid black; border-radius: 5px; padding: 5px;">
+	<div>
+		<label for="name">name</label>
+		<input type="text" id="name" [(ngModel)]="dataInput.name">
+	</div>
+	<div>
+		<label for="price">price</label>
+		<input type="text" id="price" [(ngModel)]="dataInput.unitPrice">
+	</div>
+	<div>
+		<label for="promo">promo</label>
+		<input type="checkbox" id="promo" [(ngModel)]="dataInput.isPromo">
+	</div>
+	<button (click)="add()">Add</button>
+</div>
+
+<ul>
+	<app-shopping-item *ngFor="let item of listItems" [item]="item" />
+</ul>
+
+<p>Total: {{ totalPrice() | currency:'EUR' }} </p>

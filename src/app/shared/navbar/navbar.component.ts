@@ -26,6 +26,7 @@ export class NavbarComponent {
 			{ title: 'Accordeon', url: 'exo5' },
 			{ title: 'Book List', url: 'exo6' },
 			{ title: 'Book List (Service)', url: 'exo6-service' },
+			{ title: 'Shopping List', url: 'exo7' },
 		] }
 	]
 

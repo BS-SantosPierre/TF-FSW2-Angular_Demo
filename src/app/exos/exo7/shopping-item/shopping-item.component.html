@@ -1,0 +1,10 @@
+<li>
+	{{ item.name }} - qt: {{ item.quantity }} -
+	<span
+	[ngClass]="{ 'red': item.isPromo }"
+	[ngStyle]="{ 'color': item.isPromo ? 'red' : 'black'}">{{ item.unitPrice | currency: 'EUR' }}</span>
+	- {{ item.quantity * item.unitPrice | currency: 'EUR' }}
+	<button (click)="updateQuantity()"> + </button>
+	<button (click)="updateQuantity(false)" > - </button>
+	<button (click)="delete()">Delete</button>
+</li>

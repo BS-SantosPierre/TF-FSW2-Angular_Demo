@@ -14,6 +14,8 @@ import { Exo6ServiceComponent } from './exo6-service/exo6-service.component';
 import { BookServiceComponent } from './exo6-service/book/book-service.component';
 import { BookComponent } from './exo6/book/book.component';
 import { Exo6Component } from './exo6/exo6.component';
+import { Exo7Component } from './exo7/exo7.component';
+import { ShoppingItemComponent } from './exo7/shopping-item/shopping-item.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { Exo6Component } from './exo6/exo6.component';
 		BookComponent,
 		Exo6Component,
 		Exo6ServiceComponent,
-		BookServiceComponent
+		BookServiceComponent,
+  Exo7Component,
+  ShoppingItemComponent
 	],
   imports: [
     CommonModule,

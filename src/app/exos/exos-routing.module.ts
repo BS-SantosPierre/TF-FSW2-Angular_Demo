@@ -7,6 +7,7 @@ import { Exo4Component } from './exo4/exo4.component';
 import { Exo5Component } from './exo5/exo5.component';
 import { Exo6ServiceComponent } from './exo6-service/exo6-service.component';
 import { Exo6Component } from './exo6/exo6.component';
+import { Exo7Component } from './exo7/exo7.component';
 
 const routes: Routes = [
 	{ path: 'exo1', component: Exo1Component },
@@ -16,6 +17,7 @@ const routes: Routes = [
 	{ path: 'exo5', component: Exo5Component },
 	{ path: 'exo6', component: Exo6Component },
 	{ path: 'exo6-service', component: Exo6ServiceComponent },
+	{ path: 'exo7', component: Exo7Component },
 ];
 
 @NgModule({
