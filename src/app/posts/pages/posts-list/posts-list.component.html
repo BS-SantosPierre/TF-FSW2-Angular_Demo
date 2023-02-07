@@ -1,0 +1,10 @@
+<h1>List Post</h1>
+
+<article *ngFor="let post of posts">
+	<header>{{ post.title }}</header>
+	<a [routerLink]="'/posts/'+post.id">
+		<button>Voir Plus</button>
+	</a>
+</article>
+
+<router-outlet />
