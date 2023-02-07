@@ -17,6 +17,7 @@ export class NavbarComponent {
 			{ title: 'Demo 5', url: 'demo5' },
 			{ title: 'Demo 6', url: 'demo6' },
 			{ title: 'Demo 7', url: 'demo7' },
+			{ title: 'Demo 8', url: 'demo8' },
 		]},
 		{ title: 'Exos', children: [
 			{ title: 'UserInfo/Input', url: 'exo1' },
