@@ -20,6 +20,7 @@
 		<p *ngIf="hasErrorAndTouched(subscriptionForm, 'firstName', 'required')">Ce champ est requis</p>
 		<p *ngIf="hasErrorAndTouched(subscriptionForm, 'firstName', 'minlength')">Min 5 caractères</p>
 	</div>
+
 	<div>
 		<label for="birth-date">Birth Date</label>
 		<input type="date" id="birth-date" formControlName="birthDate">
@@ -42,3 +43,33 @@
 <p>Formulaire valide : {{ subscriptionForm.valid }}</p>
 <p>Errors : {{ subscriptionForm.get('firstName')?.errors }}</p>
 <p>{{ subscriptionForm.value | json }}</p>
+
+
+<h3>Form Builder</h3>
+
+<form [formGroup]="artistProfile">
+	<div>
+		<label for="name">Name</label>
+		<input type="text" id="name" formControlName="name">
+		<p *ngIf="hasErrorAndTouched(artistProfile, 'name', 'required')">Ce champ est requis</p>
+	</div>
+
+	<select formControlName="label">
+		<option *ngFor="let label of labels" [ngValue]="label.id">{{label.name}}</option>
+	</select>
+
+	<div formArrayName="genres">
+		<h3>Genres</h3>
+		<!-- Attention type button -->
+		<button type="button" (click)="addGenre()">Add genre</button>
+
+		<div *ngFor="let genre of genres.controls; index as i">
+			<label for="">Genre {{i+1}}:</label>
+			<input type="text" [formControlName]="i" />
+			<button (click)="removeGenre(i)">Remove</button>
+		</div>
+	</div>
+	<button type="submit" [disabled]="!artistProfile.valid">Submit</button>
+</form>
+
+{{ artistProfile.value | json }}

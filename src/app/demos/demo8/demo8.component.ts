@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-demo8',
@@ -19,6 +19,44 @@ export class Demo8Component {
 			zip: new FormControl('')
 		})
 	});
+
+	// FormGroupBuilder
+	artistProfile: FormGroup;
+
+	labels: any[] = [
+		{id: 1, name: "Def Jam"},
+		{id: 2, name: "Universal"},
+	]
+
+	constructor(
+		private _fb: FormBuilder
+	){
+		this.artistProfile = this._fb.group({
+			name: ['', [Validators.required]],
+			label: [1, [Validators.required]],
+			genres: this._fb.array([
+				this._fb.control('', Validators.required)
+			])
+		})
+	}
+	// Form Array
+	get genres(){
+		return this.artistProfile.get('genres') as FormArray;
+	}
+
+	// Générique méthode Tony
+	getFormArray(myForm: FormGroup, nameFormArray: string){
+		return myForm.get(nameFormArray) as FormArray;
+	}
+
+	addGenre() {
+		// this.getFormArray(this.artistProfile, 'genres').push(this._fb.control('', Validators.required));
+		this.genres.push(this._fb.control('', Validators.required));
+	}
+
+	removeGenre(id: number) {
+		this.genres.removeAt(id);
+	}
 
 	hasErrorAndTouched(myForm: FormGroup, inputName: string, validator: string) {
 		return myForm.get(inputName)?.hasError(validator)
