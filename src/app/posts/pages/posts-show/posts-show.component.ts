@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../../models/post';
 import { PostsService } from '../../services/posts.service';
 
@@ -13,7 +13,8 @@ export class PostsShowComponent implements OnInit {
 
 	constructor(
 		private _postsService: PostsService,
-		private _activatedRoute: ActivatedRoute
+		private _activatedRoute: ActivatedRoute, // Récupère les infos de l'url, notamment les params
+		private _router: Router // Accès aux outils de navigation
 	){}
 
 	ngOnInit(): void {
@@ -22,6 +23,10 @@ export class PostsShowComponent implements OnInit {
 		// PARAMS URL TOUJOURS AU FORMAT STRING
 		this.post = this._postsService.getOne(parseInt(id));
 		// this.post = this._postsService.getOne(+id);
-		console.log(this.post);
+
+		// Si le post est undefined, redirige l'utilisateur
+		if (!this.post) {
+			this._router.navigate(['/posts']);
+		}
 	}
 }
